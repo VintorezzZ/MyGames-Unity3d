@@ -61,7 +61,7 @@ public class Player_Controller : MonoBehaviour
         RaycastHit hit;
         Ray ray = camera.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit, 50000, layerMask))
-        {            
+        {
             GameObject obj = hit.transform.gameObject;
             if (playerPawns.Contains(obj))
             {
@@ -71,7 +71,7 @@ public class Player_Controller : MonoBehaviour
 
                 sphere.transform.position = selectedPawn.transform.position;
                 sphere.SetActive(true);
-}
+            }        
         }
     }
 
