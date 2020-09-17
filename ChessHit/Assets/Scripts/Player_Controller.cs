@@ -10,6 +10,7 @@ public class Player_Controller : MonoBehaviour
     public new Camera camera;
     public GameController gameController;
     public AimArrow aimArrow;
+    public GameObject sphere;
     public LayerMask layerMask;
     public List<GameObject> playerPawns;
     public GameObject selectedPawn;
@@ -21,28 +22,7 @@ public class Player_Controller : MonoBehaviour
     public UnityEvent Player_Pawn_Killed;
 
 
-    private void Awake()
-    {
-        //if (!instance)
-        //{
-        //    DontDestroyOnLoad(gameObject);
-        //    instance = this;
-        //}
-        //else
-        //{
-        //    Destroy(gameObject);
-        //}
-
-        //if (instance == null)
-        //{
-        //    instance = this;
-        //}
-        //else
-        //{
-        //    Destroy(this);
-        //}
-
-    }
+  
 
     void Start()
     {
@@ -64,7 +44,7 @@ public class Player_Controller : MonoBehaviour
                 Select_Pawn();                
 
             SetVector();
-            aimArrow.ArrowAim();
+            aimArrow.ArrowAim(launchVector, selectedPawn);
         }           
 
         if (Input.GetMouseButtonUp(0))
@@ -88,7 +68,10 @@ public class Player_Controller : MonoBehaviour
                 selectedPawn = obj;
                 mouseClickPosition = Input.mousePosition;
                 aimArrow.aimArrow.SetActive(true);
-            }
+
+                sphere.transform.position = selectedPawn.transform.position;
+                sphere.SetActive(true);
+}
         }
     }
 
@@ -107,6 +90,7 @@ public class Player_Controller : MonoBehaviour
         selectedPawn.GetComponent<Rigidbody>().AddForce(launchVector * launchForce, ForceMode.VelocityChange);
         selectedPawn = null;
         aimArrow.aimArrow.SetActive(false);
+        sphere.SetActive(false);
     }
 
     void CheckPawnToDestroy()

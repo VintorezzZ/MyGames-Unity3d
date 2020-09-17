@@ -14,35 +14,14 @@ public class AI_Controller : MonoBehaviour
     public int random_AI_Pawn;
     public int random_Player_Pawn;
     public int force = 30;
-
+    public GameObject sphere;
 
     GameController gameController;
 
     public UnityEvent AI_Pawn_Killed;
 
 
-    private void Awake()
-    {
-        //if (!instance)
-        //{
-        //    DontDestroyOnLoad(gameObject);
-        //    instance = this;
-        //}
-        //else
-        //{
-        //    Destroy(gameObject);
-        //}
-
-        //if (instance == null)
-        //{
-        //    instance = this;
-        //}
-        //else
-        //{
-        //    Destroy(this);
-        //}
-
-    }
+    
 
 
     private void Start()
@@ -65,15 +44,16 @@ public class AI_Controller : MonoBehaviour
 
     public void AI_Turn()
     {
-        int timeToWait = UnityEngine.Random.Range(2, 4);
+        int timeToWait = UnityEngine.Random.Range(1, 3);        
+        
         StartCoroutine(WaitAndGo(timeToWait));
     }
 
     IEnumerator WaitAndGo(int timeToWait)
     {
-        yield return new WaitForSeconds(timeToWait);
 
         //Debug.Log("AI Turn!");
+        yield return new WaitForSeconds(1);
 
         random_AI_Pawn = UnityEngine.Random.Range(0, AI_pawns.Count - 1);
         random_Player_Pawn = UnityEngine.Random.Range(0, player_pawns.Count - 1);
@@ -83,7 +63,14 @@ public class AI_Controller : MonoBehaviour
 
         Vector3 moveDir = (Pl_pos - AI_pos).normalized * force;
 
+        sphere.transform.position = AI_pos;
+        sphere.SetActive(true);
+        Debug.Log("act");
+        yield return new WaitForSeconds(timeToWait);
+
         AI_pawns[random_AI_Pawn].GetComponent<Rigidbody>().AddForce(moveDir, ForceMode.VelocityChange);
+
+        sphere.SetActive(false);
 
         GameController.instance.OnAI_Moved();
     }
