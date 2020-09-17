@@ -46,7 +46,7 @@ public class WorldController : MonoBehaviour
     {
         if (PlayerController.gameOver == false && UIManager.GameIsPaused == false)
         {
-            transform.position -= Vector3.forward * currentSpeed * Time.fixedDeltaTime;
+            transform.Translate((-Vector3.forward) * currentSpeed * Time.fixedDeltaTime);
             currentSpeed += speedUp * Time.fixedDeltaTime;
             if (currentSpeed > maxSpeed)
                 currentSpeed = maxSpeed;

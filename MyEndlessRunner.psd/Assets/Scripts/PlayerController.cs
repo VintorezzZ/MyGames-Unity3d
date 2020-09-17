@@ -136,24 +136,24 @@ public class PlayerController : MonoBehaviour
     }
     IEnumerator GoMove()
     {
-        if (Input.GetKeyDown(KeyCode.A) | Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.A) | Input.GetKeyDown(KeyCode.LeftArrow) | SwipeManager.swipeLeft)
         {
             ChangeLane(-1);
             if (targetLane > -1 && transform.position.y < 0.14)
                 animator.SetTrigger("left");
         }
-        else if (Input.GetKeyDown(KeyCode.D) | Input.GetKeyDown(KeyCode.RightArrow))
+        else if (Input.GetKeyDown(KeyCode.D) | Input.GetKeyDown(KeyCode.RightArrow) | SwipeManager.swipeRight)
         {
             ChangeLane(1);
             if (targetLane < 3 && transform.position.y < 0.14)
                 animator.SetTrigger("right");
         }
-        else if (vMove > 0)
+        else if (vMove > 0 | SwipeManager.swipeUp)
         {
             if (cc.isGrounded)
                 Jump();
         }
-        else if (vMove < 0)
+        else if (vMove < 0 | SwipeManager.swipeDown)
         {           
                 Slide();
         }
