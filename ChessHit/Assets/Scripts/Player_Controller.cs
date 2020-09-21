@@ -83,6 +83,8 @@ public class Player_Controller : MonoBehaviour
         float correctZ = y / Screen.height;
         Vector3 correctVector = new Vector3(correctX, 0, correctZ);
         launchVector = Vector3.ClampMagnitude(correctVector * multiplier, 1);
+
+        RotatePawnToVector(selectedPawn, launchVector);
     }
 
     void LaunchPawn()
@@ -105,12 +107,15 @@ public class Player_Controller : MonoBehaviour
                     playerPawns.Remove(playerPawns[i]);
                     Destroy(pawnToDestroy);
                     Player_Pawn_Killed.Invoke();
-                }
-            
+                }            
             }
-        }
+        }      
+    }
 
-      
+
+    void RotatePawnToVector(GameObject selectedPawn, Vector3 launchVector)
+    {
+        selectedPawn.transform.rotation = Quaternion.LookRotation(launchVector);
     }
 
 }

@@ -65,7 +65,6 @@ public class AI_Controller : MonoBehaviour
 
         sphere.transform.position = AI_pos;
         sphere.SetActive(true);
-        Debug.Log("act");
         yield return new WaitForSeconds(timeToWait);
 
         AI_pawns[random_AI_Pawn].GetComponent<Rigidbody>().AddForce(moveDir, ForceMode.VelocityChange);
