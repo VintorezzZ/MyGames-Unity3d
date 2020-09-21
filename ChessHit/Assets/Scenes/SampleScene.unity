@@ -1322,7 +1322,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8837021708604620289, guid: 4dbf2e11bfd3f2245aac4bdd3bd38531, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 57.63
+      value: 57.549
       objectReference: {fileID: 0}
     - target: {fileID: 8837021708604620289, guid: 4dbf2e11bfd3f2245aac4bdd3bd38531, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2615,6 +2615,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  explosion: {fileID: 1484826065856777949, guid: bbab3086f1c4dd149bc6a2a285405336, type: 3}
 --- !u!4 &624104875
 Transform:
   m_ObjectHideFlags: 0
@@ -5732,6 +5733,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  explosion: {fileID: 1484826065856777949, guid: bbab3086f1c4dd149bc6a2a285405336, type: 3}
 --- !u!1001 &1512918459
 PrefabInstance:
   m_ObjectHideFlags: 0

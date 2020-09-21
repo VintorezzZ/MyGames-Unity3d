@@ -20,8 +20,8 @@ public class AI_Controller : MonoBehaviour
 
     public UnityEvent AI_Pawn_Killed;
 
+    [SerializeField] private ParticleSystem explosion;
 
-    
 
 
     private void Start()
@@ -85,6 +85,9 @@ public class AI_Controller : MonoBehaviour
             {
                 GameObject pawnToDestroy = AI_pawns[i];
                 AI_pawns.Remove(AI_pawns[i]);
+
+                PlayExplosionEffect(pawnToDestroy);
+
                 Destroy(pawnToDestroy);
                 AI_Pawn_Killed.Invoke();
 
@@ -95,5 +98,14 @@ public class AI_Controller : MonoBehaviour
     void RotatePawnToVector(GameObject selectedPawn, Vector3 launchVector)
     {
         selectedPawn.transform.rotation = Quaternion.LookRotation(launchVector);
+    }
+
+    void PlayExplosionEffect(GameObject obj)
+    {
+        ParticleSystem newExplosion = explosion;
+        //Color objColor = obj.GetComponentInChildren<Material>().color;
+        newExplosion.GetComponent<Renderer>().sharedMaterial.color = Color.red;
+        var expeffect = Instantiate(newExplosion, obj.transform.position, obj.transform.rotation);
+        //Destroy(expeffect, 3);
     }
 }

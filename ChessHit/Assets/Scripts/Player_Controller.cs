@@ -21,7 +21,7 @@ public class Player_Controller : MonoBehaviour
 
     public UnityEvent Player_Pawn_Killed;
 
-
+    [SerializeField] private ParticleSystem explosion;
   
 
     void Start()
@@ -105,6 +105,9 @@ public class Player_Controller : MonoBehaviour
                 {
                     GameObject pawnToDestroy = playerPawns[i];
                     playerPawns.Remove(playerPawns[i]);
+
+                    PlayExplosionEffect(pawnToDestroy);
+
                     Destroy(pawnToDestroy);
                     Player_Pawn_Killed.Invoke();
                 }            
@@ -116,6 +119,15 @@ public class Player_Controller : MonoBehaviour
     void RotatePawnToVector(GameObject selectedPawn, Vector3 launchVector)
     {
         selectedPawn.transform.rotation = Quaternion.LookRotation(launchVector);
+    }
+
+    void PlayExplosionEffect(GameObject obj)
+    {
+        ParticleSystem newExplosion = explosion;
+        //Color objColor = obj.GetComponentInChildren<Material>().color;
+        newExplosion.GetComponent<Renderer>().sharedMaterial.color = Color.cyan;
+        var expeffect = Instantiate(newExplosion, obj.transform.position, obj.transform.rotation);
+        //Destroy(expeffect, 3);
     }
 
 }
