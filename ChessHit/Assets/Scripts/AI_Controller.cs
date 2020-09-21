@@ -65,6 +65,9 @@ public class AI_Controller : MonoBehaviour
 
         sphere.transform.position = AI_pos;
         sphere.SetActive(true);
+
+        RotatePawnToVector(AI_pawns[random_AI_Pawn], moveDir);
+
         yield return new WaitForSeconds(timeToWait);
 
         AI_pawns[random_AI_Pawn].GetComponent<Rigidbody>().AddForce(moveDir, ForceMode.VelocityChange);
@@ -87,5 +90,10 @@ public class AI_Controller : MonoBehaviour
 
             }            
         }
-    }   
+    }
+
+    void RotatePawnToVector(GameObject selectedPawn, Vector3 launchVector)
+    {
+        selectedPawn.transform.rotation = Quaternion.LookRotation(launchVector);
+    }
 }
