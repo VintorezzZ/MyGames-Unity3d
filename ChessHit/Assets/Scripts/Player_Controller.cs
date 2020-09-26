@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Cinemachine;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -19,10 +20,12 @@ public class Player_Controller : MonoBehaviour
     public float launchForce = 35;
     public Vector3 launchVector;
 
+    public CinemachineFreeLook _freeLookComponent;
+
     public UnityEvent Player_Pawn_Killed;
 
     [SerializeField] private ParticleSystem explosion;
-  
+    private bool isCameraMoving;
 
     void Start()
     {
@@ -43,9 +46,15 @@ public class Player_Controller : MonoBehaviour
             if (selectedPawn == null)
                 Select_Pawn();                
 
-            SetVector();
-            aimArrow.ArrowAim(launchVector, selectedPawn);
-        }           
+            if(selectedPawn != null)
+            {
+                SetVector();
+                aimArrow.ArrowAim(launchVector, selectedPawn);
+
+            }
+        }
+        
+        CameraControl();
 
         if (Input.GetMouseButtonUp(0))
         {
@@ -60,12 +69,15 @@ public class Player_Controller : MonoBehaviour
     {
         RaycastHit hit;
         Ray ray = camera.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit, 50000, layerMask))
+        if (isCameraMoving)
+            return;
+        if (Physics.Raycast(ray, out hit, 1000, layerMask))
         {
             GameObject obj = hit.transform.gameObject;
             if (playerPawns.Contains(obj))
             {
                 selectedPawn = obj;
+
                 mouseClickPosition = Input.mousePosition;
                 aimArrow.aimArrow.SetActive(true);
 
@@ -77,6 +89,8 @@ public class Player_Controller : MonoBehaviour
 
     void SetVector()
     {
+        //if (selectedPawn == null)
+        //    return;
         float x = mouseClickPosition.x - Input.mousePosition.x;
         float y = mouseClickPosition.y - Input.mousePosition.y;
         float correctX = x / Screen.width;
@@ -128,6 +142,21 @@ public class Player_Controller : MonoBehaviour
         newExplosion.GetComponent<Renderer>().sharedMaterial.color = Color.cyan;
         var expeffect = Instantiate(newExplosion, obj.transform.position, obj.transform.rotation);
         //Destroy(expeffect, 3);
+    }
+
+    void CameraControl()
+    {
+        if (Input.GetMouseButton(0) && selectedPawn != null)
+        {
+            
+            _freeLookComponent.enabled = false;
+            isCameraMoving = false;
+        }
+        else if(Input.GetMouseButton(0))       
+        {
+            _freeLookComponent.enabled = true;
+            isCameraMoving = true;
+        }
     }
 
 }
