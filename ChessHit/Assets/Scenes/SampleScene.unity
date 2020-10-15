@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2052569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2353,6 +2353,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpdateInterval: 0.2
+  _framesAccumulated: 0
+  _framesDrawnInTheInterval: 0
+  _timeLeft: 0
+  _text: {fileID: 0}
+  _currentFPS: 0
 --- !u!1001 &309794252
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3956,7 +3961,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 821456585}
-  m_LocalRotation: {x: 0.19424811, y: 0.00000001687864, z: -0.0000000033423067, w: 0.98095244}
+  m_LocalRotation: {x: 0.19424811, y: -0.00000001687864, z: 0.0000000033423067, w: 0.98095244}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4731,13 +4736,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.22975297, y: 0.000000008373046, z: -0.0000000019766087, w: 0.973249}
-  m_LocalPosition: {x: -0.009101272, y: 80.74953, z: -38.19856}
+  m_LocalRotation: {x: 0.4108317, y: -0.000000007843627, z: 0.0000000035344645, w: 0.9117112}
+  m_LocalPosition: {x: -0.01, y: 93.11, z: -29.85}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 59.476, y: 0.001, z: -0.001}
+  m_LocalEulerAnglesHint: {x: 48.514, y: 0, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4920,7 +4925,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1031562514}
-  m_LocalRotation: {x: 0.22975294, y: -0.000000008373047, z: 0.0000000019766089, w: 0.973249}
+  m_LocalRotation: {x: 0.22975294, y: 0.000000008373045, z: -0.0000000019766084, w: 0.973249}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5864,7 +5869,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1300599685}
-  m_LocalRotation: {x: 0.22975294, y: 0.000000008373045, z: -0.0000000019766084, w: 0.973249}
+  m_LocalRotation: {x: 0.22975294, y: -0.000000008373047, z: 0.0000000019766089, w: 0.973249}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

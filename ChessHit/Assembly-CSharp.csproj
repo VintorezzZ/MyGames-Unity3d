@@ -56,10 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\GameController.cs" />
-    <Compile Include="Assets\MMFeedbacks\MMFeedbacks\Demos\MMFeedbacksDemo\Scripts\DemoBall.cs" />
-    <Compile Include="Assets\MMFeedbacks\MMFeedbacks\Demos\MMFeedbacksDemo\Scripts\DemoGhost.cs" />
     <Compile Include="Assets\Scripts\SoundManager.cs" />
-    <Compile Include="Assets\MMFeedbacks\MMFeedbacks\Demos\MMFeedbacksDemo\Scripts\DemoButton.cs" />
     <Compile Include="Assets\Scripts\Player_Controller.cs" />
     <Compile Include="Assets\Scripts\AimArrow.cs" />
     <Compile Include="Assets\Scripts\DontDestroyOnLoad.cs" />
@@ -71,17 +68,8 @@
     <Compile Include="Assets\Free Low Poly Chess Set\Example\Scripts\CameraRotate.cs" />
   </ItemGroup>
   <ItemGroup>
-     <None Include="Assets\MMFeedbacks\NiceVibrations\OlderVersions\v2.0.1\NiceVibrations-v-2-0-1-readme.txt" />
      <None Include="Assets\XYZ_Gift\ToonShader.shader" />
-     <None Include="Assets\MMFeedbacks\NiceVibrations\ThirdParty\Newtonsoft\NewtonsoftJsonLicense.txt" />
-     <None Include="Assets\MMFeedbacks\readme.txt" />
-     <None Include="Assets\MMFeedbacks\license.txt" />
-     <None Include="Assets\MMFeedbacks\NiceVibrations\Common\Plugins\Android\AndroidManifest.xml" />
-     <None Include="Assets\MMFeedbacks\NiceVibrations\OlderVersions\v1.7\NiceVibrations-v-1-7-readme.txt" />
-     <None Include="Assets\MMFeedbacks\NiceVibrations\ThirdParty\Newtonsoft\Newtonsoft.Json.dll" />
-     <None Include="Assets\MMFeedbacks\NiceVibrations\readme.txt" />
      <None Include="Assets\Free Low Poly Chess Set\README.txt" />
-     <None Include="Assets\MMFeedbacks\NiceVibrations\license.txt" />
     <Reference Include="UnityEngine">
       <HintPath>D:\Program files\Unity\Hub\Editor\2020.1.5f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -261,9 +249,6 @@
     </Reference>
     <Reference Include="UnityEditor">
       <HintPath>D:\Program files\Unity\Hub\Editor\2020.1.5f1\Editor\Data\Managed\UnityEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>Assets\MMFeedbacks\NiceVibrations\ThirdParty\Newtonsoft\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>D:\Program files\Unity\Hub\Editor\2020.1.5f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -619,6 +604,9 @@
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
@@ -634,6 +622,9 @@
     <Reference Include="Unity.Rider.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
@@ -643,70 +634,8 @@
     <Reference Include="UnityEditor.UI">
       <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
-    <Reference Include="Cinemachine">
-      <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
-    </Reference>
-    <Reference Include="com.unity.cinemachine.editor">
-      <HintPath>Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="MoreMountains.Tools.Cinemachine.csproj">
-      <Project>{EDA01FD8-156A-DE53-6B9D-A5CC174E137D}</Project>
-      <Name>MoreMountains.Tools.Cinemachine</Name>
-    </ProjectReference>
-    <ProjectReference Include="MoreMountains.Tools.Feedbacks.Editor.csproj">
-      <Project>{31957E54-1FC5-F7F9-43F7-354C69B30204}</Project>
-      <Name>MoreMountains.Tools.Feedbacks.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="MoreMountains.Feedbacks.MMTools.csproj">
-      <Project>{F9C9BAAC-84F4-6E13-B088-602709AD241B}</Project>
-      <Name>MoreMountains.Feedbacks.MMTools</Name>
-    </ProjectReference>
-    <ProjectReference Include="MoreMountains.Tools.Editor.csproj">
-      <Project>{D5880993-0233-5EA3-7D1A-983124FB4F3F}</Project>
-      <Name>MoreMountains.Tools.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="MoreMountains.Tools.Feedbacks.csproj">
-      <Project>{5860351B-5E3D-625C-B5B5-6FBE3FCA6060}</Project>
-      <Name>MoreMountains.Tools.Feedbacks</Name>
-    </ProjectReference>
-    <ProjectReference Include="MoreMountains.Feedbacks.csproj">
-      <Project>{9A7F0619-9A95-20BA-6B15-90A54736530F}</Project>
-      <Name>MoreMountains.Feedbacks</Name>
-    </ProjectReference>
-    <ProjectReference Include="MoreMountains.Feedbacks.Editor.csproj">
-      <Project>{30428986-DB10-0B9D-295D-6E953E464BE7}</Project>
-      <Name>MoreMountains.Feedbacks.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="MoreMountains.NiceVibrations.Haptics.csproj">
-      <Project>{CC0D029B-E355-BE73-602B-AA8480619BC7}</Project>
-      <Name>MoreMountains.NiceVibrations.Haptics</Name>
-    </ProjectReference>
-    <ProjectReference Include="MoreMountains.Tools.csproj">
-      <Project>{A25228DE-A96B-1CBF-7B5C-810C90E516F1}</Project>
-      <Name>MoreMountains.Tools</Name>
-    </ProjectReference>
-    <ProjectReference Include="MoreMountains.Feedbacks.NiceVibrations.csproj">
-      <Project>{A2BB38F2-8C04-6F15-6643-095E64471FF8}</Project>
-      <Name>MoreMountains.Feedbacks.NiceVibrations</Name>
-    </ProjectReference>
-    <ProjectReference Include="MoreMountains.NiceVibrations.csproj">
-      <Project>{B76E7DB1-D8B2-1A9C-34D0-AF330CDF641C}</Project>
-      <Name>MoreMountains.NiceVibrations</Name>
-    </ProjectReference>
-    <ProjectReference Include="MoreMountains.NiceVibrations.Editor.csproj">
-      <Project>{5FCB33FA-C79A-9025-D583-A586C50ACC55}</Project>
-      <Name>MoreMountains.NiceVibrations.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="MoreMountains.NiceVibrations.Demos.csproj">
-      <Project>{B6C0D1F9-A9AF-9C2F-0D38-27A16953A287}</Project>
-      <Name>MoreMountains.NiceVibrations.Demos</Name>
-    </ProjectReference>
-    <ProjectReference Include="MoreMountains.Feedbacks.Cinemachine.csproj">
-      <Project>{F0979C04-4BB0-53DD-C51F-528611B2FBB9}</Project>
-      <Name>MoreMountains.Feedbacks.Cinemachine</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

@@ -249,9 +249,6 @@
     <Reference Include="UnityEditor">
       <HintPath>D:\Program files\Unity\Hub\Editor\2020.1.5f1\Editor\Data\Managed\UnityEditor.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>Assets\MMFeedbacks\NiceVibrations\ThirdParty\Newtonsoft\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>D:\Program files\Unity\Hub\Editor\2020.1.5f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
     </Reference>

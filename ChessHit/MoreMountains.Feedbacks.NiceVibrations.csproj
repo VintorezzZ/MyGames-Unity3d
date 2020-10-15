@@ -239,9 +239,6 @@
     <Reference Include="UnityEditor">
       <HintPath>D:\Program files\Unity\Hub\Editor\2020.1.5f1\Editor\Data\Managed\UnityEditor.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>Assets\MMFeedbacks\NiceVibrations\ThirdParty\Newtonsoft\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>D:\Program files\Unity\Hub\Editor\2020.1.5f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
     </Reference>
@@ -604,14 +601,6 @@
     <ProjectReference Include="MoreMountains.Feedbacks.csproj">
       <Project>{9A7F0619-9A95-20BA-6B15-90A54736530F}</Project>
       <Name>MoreMountains.Feedbacks</Name>
-    </ProjectReference>
-    <ProjectReference Include="MoreMountains.NiceVibrations.csproj">
-      <Project>{B76E7DB1-D8B2-1A9C-34D0-AF330CDF641C}</Project>
-      <Name>MoreMountains.NiceVibrations</Name>
-    </ProjectReference>
-    <ProjectReference Include="MoreMountains.NiceVibrations.Haptics.csproj">
-      <Project>{CC0D029B-E355-BE73-602B-AA8480619BC7}</Project>
-      <Name>MoreMountains.NiceVibrations.Haptics</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
