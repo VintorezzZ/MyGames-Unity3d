@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
     }
     private void PlayParticles()
     {
-        if (Input.GetKeyDown("up") || Input.GetKeyDown("w"))
+        if (Input.GetKey("up") || Input.GetKey("w"))
         {
             thrustEffect.Play();
             if (!audioSource.isPlaying)
@@ -50,6 +50,7 @@ public class PlayerController : MonoBehaviour
                 audioSource.PlayOneShot(thrustSFX);
             }            
         }
+        
         if (Input.GetKeyUp("up") || Input.GetKeyUp("w"))
         {
             thrustEffect.Stop();
