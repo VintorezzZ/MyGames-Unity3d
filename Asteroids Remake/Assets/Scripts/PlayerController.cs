@@ -6,19 +6,20 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] float rotationSpeed;
     [SerializeField] float thrustSpeed;
+    [SerializeField] float MaxSpeed;
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform gunPos;
     [SerializeField] ParticleSystem thrustEffect;
     [SerializeField] AudioClip thrustSFX;
     [SerializeField] AudioClip fireSFX;
+    [SerializeField] GameObject BoomVFX;
     AudioSource audioSource;
     Rigidbody rb;
+    Camera mainCam;
     float horizontalInput;
     float verticalInput;
     float timer;
-    Camera mainCam;
     int lives = 3;
-    [SerializeField] GameObject BoomVFX;
 
     void Start()
     {
@@ -76,7 +77,7 @@ public class PlayerController : MonoBehaviour
 
         transform.Rotate(0, 0, -horizontalInput * rotationSpeed * Time.deltaTime);
         rb.AddForce(transform.up * verticalInput * thrustSpeed * Time.deltaTime);
-
+        rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, -MaxSpeed, MaxSpeed), Mathf.Clamp(rb.velocity.y, -MaxSpeed, MaxSpeed));
         rb.freezeRotation = false;
     }
 
