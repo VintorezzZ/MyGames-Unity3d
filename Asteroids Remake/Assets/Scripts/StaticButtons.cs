@@ -23,4 +23,9 @@ public class StaticButtons : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }
