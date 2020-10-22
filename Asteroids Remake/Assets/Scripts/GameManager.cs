@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     {
         score = 0;
         scoreText.text = score.ToString();
-        SpawnAsteroids(6);
+        SpawnAsteroids(5);
         Time.timeScale = 0;
     }
 
@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (aliveAsteroids.Count < 6) 
+        if (aliveAsteroids.Count < 5) 
         {
             SpawnAsteroids(2);
         }

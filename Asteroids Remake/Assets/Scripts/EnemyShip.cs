@@ -9,13 +9,13 @@ public class EnemyShip : MonoBehaviour
     float timer;
     [SerializeField] private Transform gunPos;
     [SerializeField] private GameObject bulletPrefab;
-    GameObject player;
-    Rigidbody rb;
-    private float maxSpeed = 3;
-    AudioSource audioSource;
+    [SerializeField] float maxSpeed = 3;
     [SerializeField] AudioClip fireSFX;
     [SerializeField] AudioClip bigBoomSFX;
     [SerializeField] GameObject BoomVFX;
+    AudioSource audioSource;
+    GameObject player;
+    Rigidbody rb;
     void Start()
     {
         mainCam = Camera.main;
@@ -47,7 +47,7 @@ public class EnemyShip : MonoBehaviour
     private void Shoot()
     {
         timer += Time.deltaTime;
-        if (timer > 1f) 
+        if (timer > 1.5f) 
         {
             audioSource.PlayOneShot(fireSFX);
             timer = 0;
@@ -69,8 +69,6 @@ public class EnemyShip : MonoBehaviour
     private void CheckPosition()
     {
 
-        float rockOffset = 1;
-
         float sceneWidth = mainCam.orthographicSize * 2 * mainCam.aspect;
         float sceneHeight = mainCam.orthographicSize * 2;
 
@@ -79,24 +77,21 @@ public class EnemyShip : MonoBehaviour
         float sceneTopEdge = sceneHeight / 2;
         float sceneBottomEdge = sceneTopEdge * -1;
 
-        if (transform.position.x > sceneRightEdge + rockOffset)
+        if (transform.position.x > sceneRightEdge)
         {
-            transform.position = new Vector2(sceneLeftEdge - rockOffset, transform.position.y);
+            transform.position = new Vector2(sceneLeftEdge, transform.position.y);
         }
-
-        if (transform.position.x < sceneLeftEdge - rockOffset)
+        if (transform.position.x < sceneLeftEdge)
         {
-            transform.position = new Vector2(sceneRightEdge + rockOffset, transform.position.y);
+            transform.position = new Vector2(sceneRightEdge, transform.position.y);
         }
-
-        if (transform.position.y > sceneTopEdge + rockOffset)
+        if (transform.position.y > sceneTopEdge)
         {
-            transform.position = new Vector2(transform.position.x, sceneBottomEdge - rockOffset);
+            transform.position = new Vector2(transform.position.x, sceneBottomEdge);
         }
-
-        if (transform.position.y < sceneBottomEdge - rockOffset)
+        if (transform.position.y < sceneBottomEdge)
         {
-            transform.position = new Vector2(transform.position.x, sceneTopEdge + rockOffset);
+            transform.position = new Vector2(transform.position.x, sceneTopEdge);
         }
 
     }

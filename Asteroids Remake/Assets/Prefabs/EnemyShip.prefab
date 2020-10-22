@@ -4937,6 +4937,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunPos: {fileID: 1419481499503427676}
   bulletPrefab: {fileID: 6895226400293766891, guid: 989dca06681cabd4297006ed11e36288, type: 3}
+  maxSpeed: 3
   fireSFX: {fileID: 8300000, guid: 3b522b450422eac46b4c0ed2ead1de16, type: 3}
   bigBoomSFX: {fileID: 8300000, guid: 34cb3c581712f684493d05dc40d382b8, type: 3}
   BoomVFX: {fileID: 100014, guid: a57a6829db3568c4d9bdc37e9e63c017, type: 3}
