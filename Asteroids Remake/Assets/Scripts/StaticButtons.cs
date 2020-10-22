@@ -11,12 +11,14 @@ public class StaticButtons : MonoBehaviour
     {
         startPanel.SetActive(false);
         Time.timeScale = 1;
+        Cursor.visible = false;
     }
 
     public void Unpause()
     {
         pausePanel.SetActive(false);
         Time.timeScale = 1;
+        Cursor.visible = false;
     }
 
     public void RestartGame()

@@ -57,11 +57,13 @@ public class GameManager : MonoBehaviour
             {
                 Time.timeScale = 1;
                 pausePanel.SetActive(false);
+                Cursor.visible = false;
             }
             else
             {
                 Time.timeScale = 0;
                 pausePanel.SetActive(true);
+                Cursor.visible = true;
             }
         }
 
