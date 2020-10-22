@@ -51,6 +51,8 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        RenderSettings.skybox.SetFloat("_Rotation", Time.time * 0.8f);
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (Time.timeScale == 0)
