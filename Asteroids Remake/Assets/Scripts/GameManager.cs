@@ -90,6 +90,7 @@ public class GameManager : MonoBehaviour
     internal void GameOver()
     {
         gameOverPanel.SetActive(true);
+        Cursor.visible = true;
     }
 
     internal void UpdateLives()
