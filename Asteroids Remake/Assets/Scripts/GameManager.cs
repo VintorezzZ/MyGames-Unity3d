@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour
 
         if (aliveAsteroids.Count < 5) 
         {
-            SpawnAsteroids(2);
+            SpawnAsteroids(1);
         }
 
         timer += Time.deltaTime;
