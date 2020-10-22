@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     {
         score = 0;
         scoreText.text = score.ToString();
-        SpawnAsteroids(4);
+        SpawnAsteroids(6);
         Time.timeScale = 0;
     }
 
@@ -65,13 +65,13 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (aliveAsteroids.Count < 4) 
+        if (aliveAsteroids.Count < 6) 
         {
-            SpawnAsteroids(1);
+            SpawnAsteroids(2);
         }
 
         timer += Time.deltaTime;
-        if (timer > 5f)
+        if (timer > 15f)
         {
             SpawnEnemyShip();
             timer = 0;
