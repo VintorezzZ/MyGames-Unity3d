@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour
         }
 
         timer += Time.deltaTime;
-        if (timer > 15f)
+        if (timer > 30f)
         {
             SpawnEnemyShip();
             timer = 0;
