@@ -45,6 +45,7 @@ public class Asteroid : MonoBehaviour
     {
         if (other.gameObject.tag == "Bullet")
         {
+            points = 125;
             audioClip = smallBoomSFX;
             if (subAsteroid != null)
             {
@@ -52,10 +53,11 @@ public class Asteroid : MonoBehaviour
                 Instantiate(subAsteroid, transform.position, Quaternion.identity);
                 GameManager.instance.aliveAsteroids.Remove(this.gameObject);
                 audioClip = bigBoomSFX;
+                points = 75;
             }
             AudioManager.instance.PlayBoomSFX(audioClip);
             Instantiate(BoomVFX, transform.position, Quaternion.identity);
-            GameManager.instance.AddPoints(50);
+            GameManager.instance.AddPoints(points);
             Destroy(gameObject, 0.1f);
         }
 

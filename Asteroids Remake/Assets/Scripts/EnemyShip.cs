@@ -22,7 +22,7 @@ public class EnemyShip : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
 
         rb = GetComponent<Rigidbody>();
-        rb.velocity = new Vector2(Random.Range(-maxSpeed, maxSpeed), Random.Range(-maxSpeed, maxSpeed));
+        rb.velocity = new Vector2(1 , Random.Range(-maxSpeed, maxSpeed));
 
         audioSource = GetComponent<AudioSource>();
         audioSource.Play();
@@ -60,6 +60,7 @@ public class EnemyShip : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bullet") || collision.gameObject.CompareTag("Player"))
         {
+            GameManager.instance.AddPoints(1000);
             Instantiate(BoomVFX, transform.position, Quaternion.identity);
             AudioManager.instance.PlayBoomSFX(bigBoomSFX);
             Destroy(this.gameObject);
