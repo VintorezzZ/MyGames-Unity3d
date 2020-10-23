@@ -1,61 +1,4 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-GAME ANALYSIS	3
-GENRE	3
-PLATFORMS	3
-TARGET AUDIENCE	3
-STORYLINE & CHARACTERS	4
-GAMEPLAY	5
-OVERVIEW OF GAMEPLAY	5
-GAME OBJECTIVES & REWARDS	5
-GAMEPLAY MECHANICS	5
-LEVEL DESIGN	6
-CONTROL SCHEME	7
-GAME AESTHETICS & USER INTERFACE	7
-
-
-
-
-
-
-
-
-
-?
-
-# Game Analysis
+﻿# Game Analysis
 В этой игре предстоит управлять космическим кораблем, уклоняться от астероидов и врагов, а также уничтожать их, чтобы заработать очки.
 
 # Genre
@@ -110,6 +53,7 @@ PC
 Очки (Points)	Игрок их получает при уничтожении астероидов. Больше уничтожил – больше получил. Использовать нельзя.
 
 
+
 # Level Design
 
 # Levels	
@@ -119,7 +63,7 @@ PC
 
 
 # Control Scheme
-Button/ Touch Input	Action it Performs
+# Button/ Touch Input	Action it Performs
 ESC	Пауза
 ЛКМ	Стрельба
 Пробел	Стрельба
@@ -142,5 +86,3 @@ UI очков и здоровья:
 
  
 Располагается в правом верхнем углу экрана. Игрок отслеживает свое здоровья и набранные очки во время игры. 
-
-
